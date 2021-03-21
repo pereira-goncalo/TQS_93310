@@ -16,7 +16,8 @@ public class Dip {
 
     private SetOfNaturals numbers;
     private SetOfNaturals starts;
-
+    private int nStars = 2;
+    private int nNumbers = 5;
     public Dip() {
         numbers = new SetOfNaturals();
         starts = new SetOfNaturals();
@@ -25,7 +26,7 @@ public class Dip {
     public Dip(int[] arrayOfNumbers, int[] arrayOfStarts) {
         this();
 
-        if (5 == arrayOfNumbers.length && 2 == arrayOfStarts.length) {
+        if (nNumbers == arrayOfNumbers.length && nStars == arrayOfStarts.length) {
             numbers.add(arrayOfNumbers);
             starts.add(arrayOfStarts);
         } else {

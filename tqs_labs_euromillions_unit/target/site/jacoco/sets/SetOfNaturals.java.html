@@ -9,8 +9,8 @@ import java.util.Objects;
 <span class="fc" id="L9">	private ArrayList&lt;Integer&gt; collection = new ArrayList&lt;&gt;();</span>
 
 	public void add(int element) {
-<span class="pc bpc" id="L12" title="1 of 2 branches missed.">		if (this.collection.contains(element)) {</span>
-<span class="nc" id="L13">			throw new IllegalArgumentException(&quot;duplicate value: &quot; + element);</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">		if (this.collection.contains(element)) {</span>
+<span class="fc" id="L13">			throw new IllegalArgumentException(&quot;duplicate value: &quot; + element);</span>
 		}
 
 <span class="fc bfc" id="L16" title="All 2 branches covered.">		if (element &lt;= 0) {</span>
@@ -40,49 +40,49 @@ import java.util.Objects;
 <span class="fc" id="L40">		return this.collection.size();</span>
 	}
 
-
+	// Não percebi se era suposto dar return ao set que constitui a interseção
+	// ou se era ao boolean que diz se há alguma interseção, fiz o segundo
 	public boolean intersects(SetOfNaturals subset) {
-<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		for (int x=0; x&lt;collection.size(); x++){</span>
-<span class="nc bnc" id="L46" title="All 2 branches missed.">			if (subset.contains(collection.get(x))){</span>
-<span class="nc" id="L47">				return true;</span>
+<span class="pc bfc" id="L46" title="All 2 branches covered.">		for (int x=0; x&lt;collection.size(); x++){</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">			if (subset.contains(collection.get(x))){</span>
+<span class="fc" id="L48">				return true;</span>
 			}
 		}
-<span class="fc" id="L50">		return false;</span>
+<span class="fc" id="L51">		return false;</span>
 	}
 
 	public boolean contains(Integer element) {
-<span class="fc" id="L54">		return collection.contains(element);</span>
+<span class="fc" id="L55">		return collection.contains(element);</span>
 	}
 
 	@Override
 	public Iterator&lt;Integer&gt; iterator() {
-<span class="fc" id="L59">		return collection.iterator();</span>
+<span class="fc" id="L60">		return collection.iterator();</span>
 	}
 
 
 	@Override
 	public int hashCode() {
-<span class="nc" id="L65">		int hash = 7;</span>
-<span class="nc" id="L66">		hash = 67 * hash + Objects.hashCode(this.collection);</span>
-<span class="nc" id="L67">		return hash;</span>
+<span class="fc" id="L66">		int hash = 7;</span>
+<span class="fc" id="L67">		hash = 67 * hash + Objects.hashCode(this.collection);</span>
+<span class="fc" id="L68">		return hash;</span>
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-<span class="pc bpc" id="L72" title="1 of 2 branches missed.">		if (this == obj) {</span>
-<span class="nc" id="L73">			return true;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">		if (this == obj) {</span>
+<span class="fc" id="L74">			return true;</span>
 		}
-<span class="pc bpc" id="L75" title="1 of 2 branches missed.">		if (obj == null) {</span>
-<span class="nc" id="L76">			return false;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">		if (obj == null) {</span>
+<span class="fc" id="L77">			return false;</span>
 		}
-<span class="pc bpc" id="L78" title="1 of 2 branches missed.">		if (getClass() != obj.getClass()) {</span>
-<span class="nc" id="L79">			return false;</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">		if (getClass() != obj.getClass()) {</span>
+<span class="fc" id="L80">			return false;</span>
 		}
 
-<span class="fc" id="L82">		final SetOfNaturals other = (SetOfNaturals) obj;</span>
-<span class="fc" id="L83">		return Objects.equals(this.collection, other.collection);</span>
+<span class="fc" id="L83">		final SetOfNaturals other = (SetOfNaturals) obj;</span>
+<span class="fc" id="L84">		return Objects.equals(this.collection, other.collection);</span>
 	}
-
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

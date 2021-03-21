@@ -40,7 +40,8 @@ public class SetOfNaturals implements Iterable<Integer> {
 		return this.collection.size();
 	}
 
-
+	// Não percebi se era suposto dar return ao set que constitui a interseção
+	// ou se era ao boolean que diz se há alguma interseção, fiz o segundo
 	public boolean intersects(SetOfNaturals subset) {
 		for (int x=0; x<collection.size(); x++){
 			if (subset.contains(collection.get(x))){
@@ -82,6 +83,5 @@ public class SetOfNaturals implements Iterable<Integer> {
 		final SetOfNaturals other = (SetOfNaturals) obj;
 		return Objects.equals(this.collection, other.collection);
 	}
-
 
 }
